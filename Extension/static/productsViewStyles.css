@@ -1,0 +1,151 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    /* min-height: 100vh; */
+    width: inherit;
+    height: inherit;
+    margin: 0;
+
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: darkgray;
+    display: block;
+    position: relative;
+}
+
+header span {
+    display: inline-flex;
+    color: yellow;
+    font-family: Verdana, sans-serif;
+    font-size: 200%;
+}
+
+#main {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    padding: 1% 0;
+}
+
+#foot {
+    width: 100%;
+    height: 5vh;
+    background-color: gray;
+    display: block;
+}
+
+
+
+
+
+.product {
+    width: 100%;
+    height: 40%;
+    border: solid;
+    border-color: blue;
+    position: relative;
+    padding: 20px;
+}
+
+.image {
+    border-color: rgb(162, 0, 255);
+    left: 2%;
+}
+
+img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.prod-info {
+    border-color: rgb(96, 242, 230);
+    left: 35%;
+}
+
+.actions {
+    border-color: rgb(162, 255, 0);
+    left: 68%;
+}
+
+.holder {
+    display: flex;
+    border: solid;
+    width: 30%;
+    height: 85%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+/* table {
+    width: 100%;
+} */
+
+
+
+
+.card {
+    width: 29vw;
+    /* background: rgb(44, 44, 44); */
+    font-family: Verdana, sans-serif;
+    /* border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; */
+    overflow: hidden;
+}
+
+/* .card__title {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(167, 159, 159);
+    font-size: 0.95rem;
+} */
+
+.card__data {
+    font-size: 4vh;
+    display: flex;
+    justify-content: space-between;
+    /* border-right: 1px solid rgb(203, 203, 203);
+    border-left: 1px solid rgb(203, 203, 203);
+    border-bottom: 1px solid rgb(203, 203, 203);
+    border-top: 1px solid rgb(203, 203, 203); */
+}
+
+.card__right {
+    width: 60%;
+    /* border-right: 1px solid rgb(203, 203, 203); */
+}
+
+.card__left {
+    width: 40%;
+    text-align: end;
+}
+
+.item {
+    padding: 3px 0;
+    background-color: white;
+}
+
+.card__right .item {
+    padding-left: 0.8em;
+}
+
+.card__left .item {
+    padding-right: 0.8em;
+}
+
+/* .item:nth-child(even) {
+    background: rgb(234, 235, 234);
+} */
