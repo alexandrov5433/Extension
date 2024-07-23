@@ -2,9 +2,9 @@ import { data } from "./src/utility/data.js";
 import { productUtil } from "./src/utility/productUtil.js";
 
 chrome.runtime.onMessage.addListener( async (msg) => {  // works!!
-    console.log(`Message received: ${msg}`);
+    // console.log(`Message received: ${msg}`);
     if (msg.event === 'NewProductAdded') {
-        console.log(`NewProductAdded: ${msg.data}`);
+        // console.log(`NewProductAdded: ${msg.data}`);
         let queryOptions = { currentWindow: true, active: true };
         // `tab` will either be a `tabs.Tab` instance or `undefined`.
         let [tab] = await chrome.tabs.query(queryOptions);
@@ -12,7 +12,8 @@ chrome.runtime.onMessage.addListener( async (msg) => {  // works!!
         let tabUrl = tab.url;
         let dataToSave = {
             tabUrl,
-            data: msg.data
+            data: msg.data,
+            activeOnSite: true
         };
         let productId = productUtil.generateProductId();
         data.storeNewProduct({
@@ -20,6 +21,5 @@ chrome.runtime.onMessage.addListener( async (msg) => {  // works!!
             dataToSave
         });
     }
-
 });
 

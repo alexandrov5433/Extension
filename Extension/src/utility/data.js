@@ -26,6 +26,7 @@ async function delAllStoredData() {
 
 async function storeNewProduct(product) {
     const { productId, dataToSave } = product;
+    dataToSave._id = productId;
     let data = await getAllData();
     data.productStorage[productId] = dataToSave;
     await saveData(data);
@@ -42,6 +43,25 @@ async function getAllProducts() {
     return data.productStorage;
 }
 
+async function getSpecificProduct(productId) {
+    let allProds = await getAllProducts();
+    let targetProd = Object.values(allProds).find(p => p._id == productId);  //if prod not found, returns undefined
+    return targetProd;
+}
+
+async function updateExistingProduct(updatedProduct) {
+    let id = updatedProduct._id;
+    let prodStorage = await getAllProducts();
+    prodStorage[id] = updatedProduct;
+    await updateProductStorage(prodStorage);
+}
+
+async function updateProductStorage(allProducts) {
+    let data = await getAllData();
+    data.productStorage = allProducts;
+    await saveData(data);
+}
+
 export const data = {
     saveData,
     getAllData,
@@ -49,5 +69,8 @@ export const data = {
     delAllStoredData,
     storeNewProduct,
     delAllProductsInStorage,
-    getAllProducts
+    getAllProducts,
+    getSpecificProduct,
+    updateExistingProduct,
+    updateProductStorage
 };

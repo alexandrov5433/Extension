@@ -9,24 +9,23 @@
 </head>
 <body>
     <header>
-        <span>Product Price Tracker</span>
-        <button id="data">See Data in console</button>
-        <button id="id">Show ID</button>
-        <button id="deleteAllData">Delete All Data</button>
+        <span><h1>Product Price Tracker</h1></span>
+        <button id="data" class="action">See Data in console</button>
+        <button id="id" class="action">Show ID</button>
+        <button id="deleteAllData" class="action">Delete All Data</button>
     </header>
+
     <div id="main">
-        <div class="product">
+        <div id="space"></div>
+
+        <!-- <div class="product">
             <span class="image holder">
-                <!-- <div class="img-container holder"> -->
                     <img src="./images/toaster.png" alt="">
-                <!-- </div> -->
             </span>
             <span class="prod-info holder">
                 <div class="info-container">
 
-
                     <div class="card">
-                        <!-- <div class="card__title">table</div> -->
                         <div class="card__data">
                           <div class="card__right">
                             <div class="item">id</div>
@@ -43,39 +42,36 @@
                         </div>
                       </div>
                       
-
-
-                    <!-- <table>
-                        <tbody>
-                            <tr>
-                                <td><span>Title:</span></td>
-                                <td><span>Toaster</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>Current Price:</span></td>
-                                <td><span>32,54 €</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>Added on:</span></td>
-                                <td><span>23.03.2024</span></td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                 </div>
             </span>
             <span class="actions holder">
                 <div class="btn-container">
-                    <button>Deatils</button>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                    <button>Visite Website</button>
+                    <button class="action">Details</button>
+                    <button class="action">Edit</button>
+                    <button class="action">Delete</button>
+                    <button class="action">Visite Website</button>
                 </div>
             </span>
+        </div> -->
+
+    </div>
+    <div id="modal-overlay">
+    <!-- <div class="overlay">
+        <div class="modal">
+            <p>Overlay message</p>
+            <button id="confirm-delete" class="action">Delete</button>
+            <button id="cancel-delete" class="action">Cancel</button>
         </div>
+    </div> -->
     </div>
-    <div id="foot">
+
+    <div id="edit-overlay">
+       
+    </div>
+
+    <!-- <div id="foot">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quaet beatae eligendi amet ducimus ullam?</p>
-    </div>
+    </div> -->
 </body>
 </html>
 

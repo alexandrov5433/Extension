@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -6,33 +11,49 @@ html {
 }
 
 body {
-    /* min-height: 100vh; */
-    width: inherit;
-    height: inherit;
-    margin: 0;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    position: relative;
 }
 
 header {
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     background-color: darkgray;
-    display: block;
-    position: relative;
+    display: flex;
+    position: fixed;
+    align-content: center;
+    z-index: 1000;
+}
+
+#space {
+    width: 100%;
+    height: 7vh;
 }
 
 header span {
-    display: inline-flex;
+    display: flex;
     color: yellow;
-    font-family: Verdana, sans-serif;
-    font-size: 200%;
+}
+
+h1 {
+    /* font-size: 200%; */
+    font-family: inherit;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 #main {
     width: 100%;
-    height: 75vh;
+    height: auto;
+    /* Adjusted to auto to fit content */
     display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
     padding: 1% 0;
+    /* margin-top: 7vh; */
 }
 
 #foot {
@@ -42,90 +63,66 @@ header span {
     display: block;
 }
 
-
-
-
-
 .product {
-    width: 100%;
-    height: 40%;
-    border: solid;
-    border-color: blue;
+    display: flex;
+    /* Changed to flex to adjust internal alignment */
+    width: auto;
+    /* Adjusted to fit content */
+    /* border: solid; */
+    /* border-color: blue; */
     position: relative;
     padding: 20px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
+    margin: 16px;
+    /* Adjusted margin */
 }
 
 .image {
     border-color: rgb(162, 0, 255);
-    left: 2%;
 }
 
 img {
-    display: flex;
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
 .prod-info {
-    border-color: rgb(96, 242, 230);
-    left: 35%;
+    /* border-color: rgb(96, 242, 230); */
+    margin-left: 10px;
+    /* Adjusted spacing between elements */
 }
 
 .actions {
-    border-color: rgb(162, 255, 0);
-    left: 68%;
+    /* border-color: rgb(162, 255, 0); */
+    margin-left: 10px;
+    /* Adjusted spacing between elements */
 }
 
 .holder {
     display: flex;
-    border: solid;
+    /* border: solid; */
     width: 30%;
-    height: 85%;
-    position: absolute;
+    height: auto;
+    /* Adjusted to fit content */
     justify-content: center;
     align-items: center;
 }
 
-/* table {
-    width: 100%;
-} */
-
-
-
-
 .card {
-    width: 29vw;
-    /* background: rgb(44, 44, 44); */
-    font-family: Verdana, sans-serif;
-    /* border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px; */
+    width: 28vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     overflow: hidden;
 }
-
-/* .card__title {
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-bottom: 1px solid rgb(167, 159, 159);
-    font-size: 0.95rem;
-} */
 
 .card__data {
     font-size: 4vh;
     display: flex;
     justify-content: space-between;
-    /* border-right: 1px solid rgb(203, 203, 203);
-    border-left: 1px solid rgb(203, 203, 203);
-    border-bottom: 1px solid rgb(203, 203, 203);
-    border-top: 1px solid rgb(203, 203, 203); */
 }
 
 .card__right {
     width: 60%;
-    /* border-right: 1px solid rgb(203, 203, 203); */
 }
 
 .card__left {
@@ -134,18 +131,85 @@ img {
 }
 
 .item {
-    padding: 3px 0;
-    background-color: white;
+    /* padding: 4vh 0; */
+    margin-bottom: 4vh;
+    max-width: 100%;
+    max-height: 4vh;
+    /* background-color: white; */
 }
 
-.card__right .item {
+/* .card__right .item {
     padding-left: 0.8em;
 }
 
 .card__left .item {
     padding-right: 0.8em;
+} */
+
+.btn-container {
+    height: auto;
+    /* Adjusted to auto to fit content */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+
 }
 
-/* .item:nth-child(even) {
-    background: rgb(234, 235, 234);
-} */
+.action {
+    margin: 2vh 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+/* modal */
+.overlay {
+    /* display: none; */
+    background-color: rgba(100, 100, 100, 0.5);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.modal {
+    background-color: white;
+    color: black;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15vh;
+    padding: 32px;
+}
+
+.modal p {
+    margin-bottom: 32px;
+}
+
+#confirm-delete {
+    margin-right: 40px;
+    color: rgb(255, 0, 0);
+}
+
+/* modal */
+
+/* modal Edit Form */
+.error {
+    text-align: center;
+    color: red
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 2vh;
+}
+
+.edit-form-btn {
+    margin-right: 4vh;
+}
+
+/* modal Edit Form */
