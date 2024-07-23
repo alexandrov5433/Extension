@@ -1,15 +1,20 @@
-import  page  from "../../node_modules/page/page.mjs";
+import page from "../../node_modules/page/page.mjs";
 import { render } from "../../node_modules/lit-html/lit-html.js";
 
 import { data } from "../utility/data.js";
 import { productUtil } from "../utility/productUtil.js";
 import { rest } from "../rest/rest.js";
+import { updatePriceOfAllProducts } from "../utility/updatePrice.js";
 
 import { showAllProducts } from "./allProductsView.js";
 import { visiteWebsite } from "./visiteWebsiteView.js";
 import { deleteProductCard } from "./deleteView.js";
 import { showEdit } from "./editView.js";
 
+
+
+
+//TODO remove after finish
 document.querySelector('#data').addEventListener('click', async () => {
     let storedData = await data.getAllData();
     console.log(`productsView.js all data in store: ${JSON.stringify(storedData, null, 2)}`);
@@ -22,9 +27,25 @@ document.querySelector('#deleteAllData').addEventListener('click', async () => {
     await data.delAllStoredData();
     console.log('All data deleted!');
 });
+document.querySelector('#downloadData').addEventListener('click', async () => {
+    let a = document.createElement("a");
+    a.href = window.URL.createObjectURL(new Blob([JSON.stringify(await data.getAllData(), null, 2)], { type: "text/plain" }));
+    a.download = "productDataInStorage.txt";
+    a.click();
+});
 
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
+});
+//TODO remove after finish
+window.rest = rest;
+window.updatePriceLogit = updatePriceOfAllProducts;
+//TODO remove after finish
+
+
+
+window.addEventListener("focus", () => {
+    page.redirect('/all-products');
 });
 
 const root = document.getElementById('main');
@@ -57,6 +78,3 @@ function addToCtx(ctx, next) {
 
     next();
 }
-
-//TODO remove
-window.rest = rest;

@@ -26,7 +26,7 @@ const productCard = (product) => html`
                           </div>
                           <div class="card__left">
                             <div class="item">${(product.data[0].textContent).trim().slice(0, 11)}</div>
-                            <div class="item">${(product.data[1].textContent).trim()}</div>
+                            <div class="item">${product.data[1].productPrice + ' ' + product.data[1].currency}</div>
                             <div class="item">${productUtil.addedOnDate(product._id).split(', ')[0]}</div>
                             <div class="item">${product.activeOnSite ? 'Yes!' : 'No!'}</div>
                           </div>

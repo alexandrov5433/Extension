@@ -17,3 +17,5 @@ app.get((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+//TODO delete this file and proxy folder if not needed at the end

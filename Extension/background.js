@@ -13,7 +13,8 @@ chrome.runtime.onMessage.addListener( async (msg) => {  // works!!
         let dataToSave = {
             tabUrl,
             data: msg.data,
-            activeOnSite: true
+            activeOnSite: true,
+            postAdditionPriceChange: {}
         };
         let productId = productUtil.generateProductId();
         data.storeNewProduct({

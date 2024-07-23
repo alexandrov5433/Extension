@@ -1,16 +1,11 @@
-async function requester(method, url, headers, data) {
+async function requester(method, url, headers, data, shouldReturnResponseDerectly) {
     let options = {
         method,
         headers: {}
     };
 
     if (headers) {
-        // options.headers = Object.assign({}, headers);
-        options.headers = {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,POST,PATCH,OPTIONS'
-        };
+        options.headers = Object.assign({}, headers);
     }
 
     if (data) {
@@ -19,28 +14,26 @@ async function requester(method, url, headers, data) {
 
     try {
         let res = await fetch(url, options);
-        let data = await res.json();
         if (!res.ok) {
-            throw new Error(data.message);
+            throw new Error((await res.json()).message);
         }
-        return data;
-
+        if (shouldReturnResponseDerectly) {
+            return res;
+        } else {
+            return await res.json();
+        }
     } catch (error) {
-        console.error(`Error occured while fetching site:\n${url}\n${error}`);
+        console.error(`Error occured while fetching data:\n${url}\n${error}`);
         return error;
     }
 }
 
 
 
-async function getPageData(url) {
-    return await requester('GET', url, {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
-    });
+async function getPageHTML(url) {
+    return await (await requester('GET', url, null, null, true)).text();
 }
 
 export const rest = {
-    getPageData
+    getPageHTML
 };
