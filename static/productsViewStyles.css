@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: 7vh;
+    background-color: darkgray;
+    display: flex;
+    position: fixed;
+    align-content: center;
+    z-index: 1000;
+}
+
+#space {
+    width: 100%;
+    height: 7vh;
+}
+
+header span {
+    display: flex;
+    color: yellow;
+}
+
+h1 {
+    /* font-size: 200%; */
+    font-family: inherit;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+    /* Adjusted to auto to fit content */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    padding: 1% 0;
+    /* margin-top: 7vh; */
+}
+
+#foot {
+    width: 100%;
+    height: 5vh;
+    background-color: gray;
+    display: block;
+}
+
+.product {
+    display: flex;
+    /* Changed to flex to adjust internal alignment */
+    width: auto;
+    /* Adjusted to fit content */
+    /* border: solid; */
+    /* border-color: blue; */
+    position: relative;
+    padding: 20px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
+    margin: 16px;
+    /* Adjusted margin */
+}
+
+.image {
+    border-color: rgb(162, 0, 255);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.prod-info {
+    /* border-color: rgb(96, 242, 230); */
+    margin-left: 10px;
+    /* Adjusted spacing between elements */
+}
+
+.actions {
+    /* border-color: rgb(162, 255, 0); */
+    margin-left: 10px;
+    /* Adjusted spacing between elements */
+}
+
+.holder {
+    display: flex;
+    /* border: solid; */
+    width: 30%;
+    height: auto;
+    /* Adjusted to fit content */
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 28vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.card__data {
+    font-size: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__right {
+    width: 60%;
+}
+
+.card__left {
+    width: 40%;
+    text-align: end;
+}
+
+.item {
+    /* padding: 4vh 0; */
+    margin-bottom: 4vh;
+    max-width: 100%;
+    max-height: 4vh;
+    /* background-color: white; */
+}
+
+/* .card__right .item {
+    padding-left: 0.8em;
+}
+
+.card__left .item {
+    padding-right: 0.8em;
+} */
+
+.btn-container {
+    height: auto;
+    /* Adjusted to auto to fit content */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+
+}
+
+.action {
+    margin: 2vh 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+/* modal */
+.overlay {
+    /* display: none; */
+    background-color: rgba(100, 100, 100, 0.5);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.modal {
+    background-color: white;
+    color: black;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15vh;
+    padding: 32px;
+}
+
+.modal p {
+    margin-bottom: 32px;
+}
+
+#confirm-delete {
+    margin-right: 40px;
+    color: rgb(255, 0, 0);
+}
+
+/* modal */
+
+/* modal Edit Form */
+.error {
+    text-align: center;
+    color: red
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 2vh;
+}
+
+.edit-form-btn {
+    margin-right: 4vh;
+}
+
+/* modal Edit Form */
